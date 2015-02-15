@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Cours sur le javascript</title>
+</head>
+<body onload="sommaire();">
+    <h3>Sommaire</h3>
+
+    <div id="liens">
+
+    </div>
+
+    <h4>Hello World</h4>
+    <input type="button" value="Hello" onclick=" alert('Hello World');">
+
+    <h4>Modification d'attibuts</h4>
+    <a href="#" onclick=' this.style.fontStyle = "italic" '>Premier Lien</a>
+    <a href="#" onclick=' this.style.background = "blue" '>Second Lien</a>
+
+    <h4>Avant-Arriere</h4>
+    <input type="button" value="Back" onclick=" window.history.back();">
+    <input type="button" value="Forward" onclick=" window.history.forward();">
+
+    <h4>Fenêtre</h4>
+    <input type="button" value="Nouvelle Fenêtre ( simple )" onclick=" window.open();">
+    <input type="button" value="Fermer la fenêtre" onclick=" document.close() ">
+    <input type="button" value="Je redimessionne" onclick=" modifierLaSize() ">
+
+    <h4>Formulaires</h4>
+
+    <form action="" method="get" name="formSaisie">
+        <p>
+            <label for="nom">Saississez votre nom</label>
+            <input type="text" name="nom"/>
+            <label for="prenom">Saississez votre prénom</label>
+            <input type="text" name="prenom"/>
+            <input type="submit" value="Ok" onclick="valider()">
+        </p>
+    </form>
+
+    <h4>Calcul</h4>
+    <label for="op1">Opérateur 1</label>
+    <input type="text" id="Op1"/> &nbsp;
+    <label for="op1">Opérateur 2</label>
+    <input type="text" id="Op2"/> <br/>
+    <label for="res" id="plop">Résultat</label>
+    <input type="text" id="Resultat"/>
+    <input type="button" value="+" onclick=" add();" />
+    <input type="button" value="/" onclick=" div();" />
+    <input type="button" value="-" onclick=" diff();" />
+    <input type="button" value="*" onclick=" mult();" />
+
+    <h4>Tableau dynamique</h4>
+    <input type="text" id="Add"/><br/>
+    <input type="submit" value="Ajouter" onclick="toAdd()"/>
+
+    <table id="list">
+
+    </table>
+
+    <h4>Fiche de renseignement </h4>
+    <p class="italique"> Les valeurs en bleu sont modifiables ( double click )</p>
+    <div>
+        <form action="">
+            <p>Nom :  <span id="nom" ondblclick="passerEnSaisie('nom')">Dupont</span></p>
+            <p>Prénom :  <span id="prenom" ondblclick="passerEnSaisie('prenom')">Dupont</span></p>
+            <p><input type="submit" value="Valider" onclick="validerlasaisie()"></p>
+        </form>
+    </div>
+
+
+    <h4>Déplacement d'un objet</h4>
+    <div>
+        Coordonnées de la souris :
+        <input type="text" id="coordonnes" value="inconnues" readonly="readonly" style="width: 90px"/>
+    </div>
+
+    <h4>Simulation d'un panier E-Commerce</h4>
+    <div id="panier">
+        <img src="pictures/ball1.png"  id="ball0"/>
+        <img src="pictures/ball2.png"  id="ball1"/>
+        <img src="pictures/ball3.png"  id="ball2"/>
+        <img src="pictures/cart.jpg"   id="cart"/><br/>
+        <label for="current">Image clickée</label>
+        <input type="text" id="current"/>
+        <label for="cart">Contenu du panier</label>
+        <select id="content">
+            <option>Aucun</option>
+        </select>
+
+    </div>
+
+
+
+    <script type="application/javascript" src="js/exercice1.js"></script>
+    <script type="application/javascript" src="js/exercice2.js"></script>
+    <script type="application/javascript" src="js/exercice3.js"></script>
+    <script type="application/javascript" src="js/exercice4.js"></script>
+    <script type="application/javascript" src="js/exercice5.js"></script>
+    <script type="application/javascript" src="js/exercice6.js"></script>
+
+</body>
+</html>
