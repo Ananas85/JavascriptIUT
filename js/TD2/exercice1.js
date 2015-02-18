@@ -20,7 +20,7 @@ var data ="<?xml version=\"1.0\" encoding=\"UTF-8\" ?> \
        </PERSONNE>\
    </GENS>";
 
-function display() {
+function display1() {
     var parser = new DOMParser();
     var docXML = parser.parseFromString(data, "application/xml");
     var personnes = docXML.getElementsByTagName("PERSONNE");
@@ -42,6 +42,4 @@ function display() {
         row.insertCell(2 ).appendChild(document.createTextNode(telephone));
 
     }
-
-    document.appendChild(table);
 }
