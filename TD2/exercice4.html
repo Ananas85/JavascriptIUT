@@ -4,10 +4,38 @@
     <meta charset="UTF-8">
     <title></title>
 </head>
-<body>
+<body onload="ChargeMusiciens();">
 
 <h1>Exercice 4</h1>
-<ul id="liste2"></ul>
 
+<button onclick="AfficheMusiciens();">Afficher les musiciens</button>
+
+<h4>Liste des Musiciens</h4>
+<ul id="musiciens"></ul>
+
+Nom <input id="nom" type="text"/><br/>
+Prénom <input id="prenom" type="text"/><br/>
+Rue <input id="rue" type="text"/><br/>
+Ville <input id="ville" type="text"/><br/>
+<input type="hidden" id="code" value="1"/>
+<button onclick="insertAbonné()">Ajouter le gonze</button>
+
+<h4>Liste des abonnés</h4>
+<ul id="abonnes"></ul>
+
+<button onclick="AffichePersonnes();">Afficher toutes les personnes</button>
+
+<h4>Liste des personnes</h4>
+<ul id="personnes"></ul>
+
+
+<script id="music" type="application/json">
+    [
+        {"Nom_Musicien": "Bacelli", "Prénom_Musicien": "Monica"},
+        {"Nom_Musicien": "Bach", "Prénom_Musicien": "Carl-Philip-Emmanuel"},
+        {"Nom_Musicien": "Bayrakdarian", "Prénom_Musicien": "Isabel"}
+    ]
+</script>
+<script type="application/javascript" src="../js/TD2/exercice4.js"></script>
 </body>
 </html>
