@@ -61,7 +61,6 @@ function addInCart(id) {
     option.text = id;
     select.add(option);
 
-
 }
 
 function removeInCart(id) {
