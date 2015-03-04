@@ -1,0 +1,12 @@
+<?xml version="1.0" enconding="UTF-8" ?>
+<MUSICIENS>
+    <MUSICIEN>
+        <NOM>Bach</NOM>
+        <PRENOM>Jean-Sébastien</PRENOM>
+    </MUSICIEN>
+    <MUSICIEN>
+        <NOM>Mozart</NOM>
+        <PRENOM>Wolfgang Amadeus</PRENOM>
+        <TEL>01 45 23 87 89</TEL>
+    </MUSICIEN>
+</MUSICIENS>
