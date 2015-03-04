@@ -78,7 +78,10 @@ function checkCartContent(){
         var selectRect = selection.getBoundingClientRect();
         if ( selectRect.left > panierRect.left && selectRect.right < panierRect.right && selectRect.top > panierRect.top && selectRect.bottom < panierRect.bottom ) {
             addInCart(selection.id);
-        } //else { removeInCart(selection.id) }
+        }
+        else {
+            removeFromCart(selection.id);
+        }
 
         selection = null;
 
@@ -97,14 +100,17 @@ function addInCart(id) {
         //On crée le sélecteur
         var select = document.createElement('select');
         select.id = "select -" + id;
-        var option = document.createElement('option');
-        option.value = 1;
-        option.text = 1;
-        option.selected = true;
-        select.add(option);
-        var plus = document.createElement('option');
-        plus.text = "+";
-        select.add(plus);
+        select.onchange = "quantityChanged()";
+        for (var i = 1; i <= 10; i++) {
+            var option = document.createElement('option');
+            option.value = i;
+            option.text = i;
+            option.selected = (i == 1);
+            select.add(option);
+        }
+        //var plus = document.createElement('option');
+        //plus.text = "+";
+        //select.add(plus);
 
         row.insertCell(1).appendChild(select);
 
@@ -114,7 +120,12 @@ function addInCart(id) {
 
 }
 
-function removeInCart(id) {
+function removeFromCart(id) {
+    var row = document.getElementById("row " + id.split("-")[1].toString());
+    if (row == null)
+        return;
+    row.parentNode.removeChild(row);
+    /*
     var select = document.getElementById('content');
     for( var i = 0; i < select.options.length; ++i){
         var option = select.options[i];
@@ -125,5 +136,10 @@ function removeInCart(id) {
     if ( select.options.length == 0 ){
         addInCart('Aucun');
     }
+    */
 
+}
+
+function quantityChanged() {
+    console.log("qty");
 }
