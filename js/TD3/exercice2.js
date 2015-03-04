@@ -1,4 +1,3 @@
-
 function handler(){
     if(requestAjax.readyState === 4){
         if(requestAjax.status === 200 ){
@@ -7,17 +6,16 @@ function handler(){
     }
 }
 
+
 function call(){
-    connect("donnees.xml");
+    connect("donnees.json");
 }
 
-
 function display(){
-    var docXml = requestAjax.responseXML;
-    var responses = docXml.getElementsByTagName("NOM");
+    var docJSON = JSON.parse(requestAjax.responseText);
     var text = "";
-    for( i = 0; i < responses.length; ++i ){
-        text = text + responses[i].firstChild.textContent + " ";
+    for( i = 0; i < docJSON.length; ++i ){
+        text = text + docJSON[i].Nom_Musicien + " ";
     }
 
     var divlist = document.getElementById("musiciens");
