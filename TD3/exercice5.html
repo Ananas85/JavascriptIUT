@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Panier en javascript</title>
+</head>
+<body onload="loadListe(); loadTable();">
+<h1>Achat d'albums</h1>
+
+<p>Déplacez la pochette dans votre caddie pour ajouter l'album à votre liste d'achat.
+    Pour supprimer l'album de votre liste, il suffit de tirer sa pochette hors du cadie ou de mettre à 0 la quantité dans le tableau.
+</p>
+
+<table id="panier">
+    <tbody>
+
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="2" style="text-align: right">Total</td>
+            <td id="total">0</td>
+        </tr>
+    </tfoot>
+</table>
+
+<img id="caddie" src="../pictures/caddie.jpg"/>
+
+<ul id="listeAlbums">
+
+</ul>
+
+<script type="application/javascript" src="../js/ajax.js"></script>
+<script type="application/javascript" src="../js/TD3/exercice5.js"></script>
+</body>
+</html>

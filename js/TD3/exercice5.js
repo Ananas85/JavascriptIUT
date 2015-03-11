@@ -11,23 +11,45 @@ document.onmouseup = checkCartContent;
 
 
 //Ici on charge toute la liste en parsant le JSON
-function loadListe(){
-    albums = JSON.parse(document.getElementById('albumsdata').text);
+function loadListe() {
     liste = document.getElementById('listeAlbums');
+    connect("albums.php");
+    var li = document.createElement('li');
+    li.appendChild(document.createTextNode("Chargement des albums..."));
+    liste.appendChild(li);
+}
+
+function handler() {
+    if (requestAjax.readyState === 4) {
+        if (requestAjax.status === 200) {
+            fillListe();
+        }
+    }
+}
+
+function fillListe() {
+
+    while (liste.hasChildNodes()) {
+        liste.removeChild(liste.lastChild);
+    }
+
+    albums = JSON.parse(requestAjax.responseText);
     for ( var i = 0; i < albums.length; ++i) {
         var li = document.createElement('li');
         li.id = albums[i].Titre;
         var img = new Image();
         img.width = 50;
         img.height = 50;
-        img.src = albums[i].URL;
-        img.id = "album " + albums[i].Code + "-" + albums[i].Titre;
+        img.src = "image.php?code=" + albums[i].Code_Album;
+        img.id = "album " + albums[i].Code_Album + "-" + albums[i].Titre_Album;
         li.appendChild(img);
-        var node = document.createTextNode(albums[i].Titre + " " + albums[i].An);
+        var node = document.createTextNode(albums[i].Titre_Album + " " + albums[i].Année_Album);
         li.appendChild(node);
         liste.appendChild(li);
     }
 }
+
+
 
 //Ici on charge le tableau
 function loadTable(){
