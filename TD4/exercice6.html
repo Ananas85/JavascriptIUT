@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Panier en javascript</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<h1>Achat d'albums</h1>
+
+<p>Déplacez la pochette dans votre caddie pour ajouter l'album à votre liste d'achat.
+    Pour supprimer l'album de votre liste, il suffit de tirer sa pochette hors du cadie ou de mettre à 0 la quantité dans le tableau.
+</p>
+<div class="row">
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panier</h3>
+            </div>
+            <table class="table table-bordered" id="panier">
+                <thead></thead>
+                <tbody></tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="2" style="text-align: right">Total</td>
+                    <td id="total">0</td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div id="caddie" class="alert alert-info text-center">
+            <i class="fa fa-shopping-cart fa-5x"></i>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Panier</h3>
+            </div>
+            <div class="panel-body">
+                <ul id="listeAlbums">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="application/javascript" src="../js/jquery-2.1.3.min.js"></script>
+<script src="//code.jquery.com/ui/1.11.3/jquery-ui.js"></script>
+<script type="application/javascript" src="../js/TD4/exercice6.js"></script>
+</body>
+</html>
