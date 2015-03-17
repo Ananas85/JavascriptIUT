@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('.target span').on('click', function() {
-        if($(this).css('color') == "red"){
+        if( this.style.color != "green" ){
             $(this).css('color', 'green');
             $(this).css('border-color', 'green');
             $(this).css('border-radius', '0px');
