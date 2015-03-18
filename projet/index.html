@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+        <div class="container">
+            <div class="panel panel-success">
+                <div class="panel-heading" role="tab" id="headingOne">
+                    <h4 class="panel-title">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#addPanel">
+                            Ajouter un petit panneau
+                        </a>
+                    </h4>
+                </div>
+                <div id="addPanel" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+
+                        <div class="btn-group">
+                            <button class="btn btn-default addWidget" data-type="datetime">
+                                <i class="fa fa-clock-o fa-3x"></i>
+                                <div>Horloge</div>
+                            </button>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-default addWidget" data-type="twitter">
+                                <i class="fa fa-3x fa-sun-o"></i>
+                                <div>Météo</div>
+                            </button>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-default addWidget" data-type="twitter">
+                                <i class="fa fa-3x fa-flickr"></i>
+                                <div>Flickr</div>
+                            </button>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-default addWidget" data-type="twitter">
+                                <i class="fa fa-3x fa-twitter"></i>
+                                <div>Twitter</div>
+                            </button>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-default addWidget" data-type="twitter">
+                                <i class="fa fa-3x fa-youtube-play"></i>
+                                <div>YouTube</div>
+                            </button>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-default addWidget" data-type="twitter">
+                                <i class="fa fa-3x fa-map-marker"></i>
+                                <div>Google Maps</div>
+                            </button>
+                        </div>
+
+                        <div class="btn-group">
+                            <button class="btn btn-default addWidget" data-type="twitter">
+                                <i class="fa fa-3x fa-soccer-ball-o"></i>
+                                <div>Foot</div>
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="btn-group">
+                        <button class="btn btn-primary" id="save">
+                            <i class="fa fa-save"></i> Enregistrer la disposition
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default" id="restore">
+                            <i class="fa fa-undo"></i> Rétablir la disposition
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-danger" id="clear">
+                            <i class="fa fa-trash-o"></i> Vider
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row" id="widgets"></div>
+        </div>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="bower_components/moment/moment.js"></script>
+        <script src="bower_components/moment/locale/fr.js"></script>
+        <script src="script.js"></script>
+</body>
+</html>

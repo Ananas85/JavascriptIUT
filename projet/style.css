@@ -1,0 +1,19 @@
+.clock-container {
+    text-align: center;
+}
+
+.clock-container h2, .clock-container h5 {
+    margin: 0;
+}
+
+#widgets {
+    margin-top:24px;
+}
+
+.addWidget div {
+    margin-top: 4px;
+}
+
+.addWidget {
+    padding: 6px 24px;
+}

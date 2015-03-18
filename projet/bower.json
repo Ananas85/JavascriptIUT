@@ -1,0 +1,10 @@
+{
+  "name": "projet-js-s4",
+  "version": "1.0",
+  "dependencies": {
+    "bootstrap": "~3.3.4",
+    "font-awesome": "~4.3.0",
+    "moment": "~2.9.0"
+  },
+  "private": true
+}

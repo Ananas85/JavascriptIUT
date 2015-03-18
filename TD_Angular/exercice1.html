@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Remplissage tableau</title>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="module.js"></script>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+</head>
+<body ng-app="initExemple">
+    <div class="container">
+        <h1>Bretagne</h1>
+        <div ng-controller="controleur" ng-init="updateTotal()">
+            <p>
+                J'ai {{ list.length }} articles à achter
+            </p>
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th>Article</th>
+                    <th>Qte</th>
+                    <th>Prix /l, /kg, /u</th>
+                    <th>Prix</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="article in list">
+                    <td>
+                        {{ article.nom }}
+                    </td>
+                    <td>
+                        {{ article.quantite * personnes }}{{ article.unite }}
+                    </td>
+                    <td>
+                        <input type="number" ng-model="article.prix" step="0.1" ng-change="updateTotal();" /> €
+                    </td>
+                    <td ng-if="article.unite == 'g'">
+                        {{ (article.quantite * personnes / 1000) * article.prix | currency: "€ " }}
+                    </td>
+                    <td ng-if="article.unite == 'cl'">
+                        {{ (article.quantite * personnes / 100) * article.prix | currency: "€ " }}
+                    </td>
+                    <td ng-if="article.unite == ''">
+                        {{ article.quantite * personnes * article.prix | currency: "€ " }}
+                    </td>
+                </tr>
+                <tr class="success">
+                    <form ng-submit="create(nom, quantite, unite, prix)">
+                        <td>
+                            <input type="text" ng-model="nom"/>
+                        </td>
+                        <td>
+                            <input type="number" ng-model="quantite"/>
+                            <select ng-model="unite">
+                                <option value=""> </option>
+                                <option value="g">g</option>
+                                <option value="cl">cl</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="number" ng-model="prix" step="0.1" /> €
+                        </td>
+                        <td>
+                            <button class="btn btn-success btn-sm">Ajouter</button>
+                        </td>
+                    </form>
+                </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="warning">
+                        <td>
+                            Nombre de personnes :
+                        </td>
+                        <td>
+                            <input type="number" ng-model="personnes" ng-change="updateTotal();"/>
+                        </td>
+                        <td></td>
+                        <td>
+                            {{ total | currency: "€ " }}
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
