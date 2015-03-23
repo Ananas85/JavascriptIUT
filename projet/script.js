@@ -14,6 +14,8 @@ $(document).ready(function() {
         $('#widgets').empty();
     });
 
+
+
 });
 var clock_launched = false;
 
@@ -49,6 +51,12 @@ function addWidget(type) {
         addFlickr();
     } else if (type == "foot") {
         addFoot();
+    } else if (type == "twitter"){
+        addTwitter();
+    } else if(type == "youtube"){
+        addYoutube();
+    } else if(type == "map"){
+        addMap();
     }
 }
 
@@ -128,6 +136,43 @@ function addFoot() {
                 i++;
             });
         });
+}
+
+function addTwitter(){
+    var panel = generatePanel("Twitter", $("<div>").addClass("twitter"));
+    insertWidget("twitter", panel);
+    $('.twitter').load('twitter.html');
+}
+
+function addYoutube(){
+    var panel = generatePanel("Youtube", $("<div>").addClass("youtube"));
+    insertWidget("youtube", panel);
+    $('.youtube' ).load('youtube.html');
+}
+
+function addMap(){
+    var panel = generatePanel("Maps", $("<div>").addClass("map"));
+    insertWidget("map", panel);
+    $(".map").gmap3({
+        map: {
+            options: {
+                center: [44.7897032,-0.6125756999999794], /* change langitude latitude of your location here */
+                zoom: 12,
+                scrollwheel: false
+            }
+        },
+        marker:{
+            latLng: [44.7897032,-0.6125756999999794], /* change langitude latitude of your location here */
+            options: {
+                icon: new google.maps.MarkerImage(
+                    "https://dl.dropboxusercontent.com/u/29545616/Preview/location.png",
+                    new google.maps.Size(48, 48, "px", "px")
+                )
+            }
+        }
+    });
+
+
 }
 
 function launchClockLoop() {
