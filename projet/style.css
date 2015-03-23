@@ -17,3 +17,18 @@
 .addWidget {
     padding: 6px 24px;
 }
+
+.map {
+    width: 358px;
+    height: 200px;
+    min-height: 320px;
+    }
+.map::before,
+.map::after {
+    content: '';
+    display: table;
+    clear: both;
+    }
+.map img {
+    max-width: none;
+    }
