@@ -2,7 +2,7 @@
     text-align: center;
 }
 
-.clock-container h2, .clock-container h5 {
+h1, h2, h3, h4, h5, h6 {
     margin: 0;
 }
 
