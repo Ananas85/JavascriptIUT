@@ -35,6 +35,8 @@ function insertWidget(type, panel) {
         size = 'col-md-4';
     else if (type == 'flickr')
         size = 'col-md-6';
+    else if (type == 'map')
+        size = 'col-md-5';
     $('#widgets').append($('<div>').addClass(size).html(panel.attr('data-type', type).addClass('widget')));
 
     $('.deleteWidget').on('click', function() {
